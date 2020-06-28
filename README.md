@@ -1,29 +1,23 @@
-# app
+##### 既然都出来一阵子了就康康吧
+    针对2🆙3应该不会太🚹，障碍应该不会太大
+    这个demo主要也是对新功能的熟悉
 
-## Project setup
-```
-npm install
-```
+对比2x独特的新功能：
+- 类似React Hooks的出现,这使得Vue也有构建大型项目也有了一席之地
+- 对类型推导的良好支持[今天的试摸过程中为什么不是Typescript,滑稽.jpg](#)
+- setup的出现,对2.0🆙过来的同学们可能需要多康康
+- ref,reactive的创建响应式对象方式
+- watchEffect追踪依赖变化再进行异步更新
+- watch体验和2x的体验差距不是太大,多了多个参数的侦听
+- 生命周期也有了小小的改动
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+以上大部分就是本次暴露出来的新功能了,当然还有toRef等api就略过了吧
+##### 开发体验
+> 隔壁俩邻居都对类型推导做出了比较好的支持,要是Vue落下的话可能地位比较堪忧,类型推导的支持其实还是蛮需要的,这并不能让项目
+没有bug,但这确实能够预防到部分无法预料到的情况。当然想得到类型推导比较完善的支持我们也是有牺牲的,我们的开发体验或许没有2x
+版本的没有束缚,这个束缚是指的this,2x版本的插件入口等都是在对原型做注入,现在我们在setup的作用域中this已经不再指向当前实例
+了,虽然对this做了牺牲但使得对props的类型推导更加的可靠了,或许Vue今后的路也是走得比较宽了。也有非常多的开发者反应setup的
+使用问题,倒是有感觉会生产出堆积的🍜code,用下限的降低换取上限的提升这也是值得的。ref,reactive的体验其实也是蛮不错的,比较
+能够接受,watchEffect对依赖的改变而进行更新,不得不说这个功能真的太有趣了,爱了爱了。watch中规中矩吧改动不是太大。本次的更新
+对于想要植入类型推导的同学真是太美了。下班了 溜了溜了
